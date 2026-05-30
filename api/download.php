@@ -1,13 +1,26 @@
 <?php
 header('Content-Type: application/json; charset=UTF-8');
 header('Access-Control-Allow-Origin: https://tyr.digital');
+header('Access-Control-Allow-Methods: POST');
 
-$nome     = trim($_POST['nome']     ?? '');
-$sobrenome= trim($_POST['sobrenome']?? '');
-$empresa  = trim($_POST['empresa']  ?? '');
-$email    = trim($_POST['email']    ?? '');
-$tel      = trim($_POST['tel']      ?? '');
-$source   = trim($_POST['source']   ?? 'download-form');
+// Honeypot: campo oculto preenchido = bot
+if (!empty($_POST['website'])) {
+    http_response_code(200);
+    echo json_encode(['ok' => true]);
+    exit;
+}
+
+function sanitize(string $v, int $max = 200): string {
+    return substr(strip_tags(trim($v)), 0, $max);
+}
+
+$nome     = sanitize($_POST['nome']      ?? '');
+$sobrenome= sanitize($_POST['sobrenome'] ?? '');
+$empresa  = sanitize($_POST['empresa']   ?? '');
+$email    = sanitize($_POST['email']     ?? '', 254);
+$tel      = sanitize($_POST['tel']       ?? '', 30);
+$allowed  = ['download-form', 'mini-form'];
+$source   = in_array($_POST['source'] ?? '', $allowed) ? $_POST['source'] : 'download-form';
 
 if (!$nome || !$email || !$empresa) {
     http_response_code(422);

@@ -1,12 +1,24 @@
 <?php
 header('Content-Type: application/json; charset=UTF-8');
 header('Access-Control-Allow-Origin: https://tyr.digital');
+header('Access-Control-Allow-Methods: POST');
 
-$nome     = trim($_POST['nome']     ?? '');
-$sobrenome= trim($_POST['sobrenome']?? '');
-$email    = trim($_POST['email']    ?? '');
-$tel      = trim($_POST['tel']      ?? '');
-$msg      = trim($_POST['msg']      ?? '');
+// Honeypot: campo oculto preenchido = bot
+if (!empty($_POST['website'])) {
+    http_response_code(200);
+    echo json_encode(['ok' => true]);
+    exit;
+}
+
+function sanitize(string $v, int $max = 200): string {
+    return substr(strip_tags(trim($v)), 0, $max);
+}
+
+$nome     = sanitize($_POST['nome']      ?? '');
+$sobrenome= sanitize($_POST['sobrenome'] ?? '');
+$email    = sanitize($_POST['email']     ?? '', 254);
+$tel      = sanitize($_POST['tel']       ?? '', 30);
+$msg      = sanitize($_POST['msg']       ?? '', 2000);
 
 if (!$nome || !$email || !$msg) {
     http_response_code(422);

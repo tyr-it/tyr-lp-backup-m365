@@ -1,0 +1,35 @@
+# ── Security Headers ──
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://img.youtube.com https://www.google-analytics.com; frame-src https://www.youtube.com; connect-src 'self' https://www.google-analytics.com; object-src 'none'; base-uri 'self'"
+    Header always unset X-Powered-By
+    Header always unset Server
+</IfModule>
+
+# ── Desabilitar listagem de diretório ──
+Options -Indexes
+
+# ── Bloquear acesso direto aos logs ──
+<FilesMatch "^.*\.(csv|log)$">
+    Require all denied
+</FilesMatch>
+
+# ── Bloquear acesso direto à pasta logs ──
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^logs/ - [F,L]
+</IfModule>
+
+# ── Cache de assets estáticos ──
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType application/pdf "access plus 1 day"
+</IfModule>
