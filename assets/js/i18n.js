@@ -1,6 +1,7 @@
 const translations = {
   pt: {
     "nav.breadcrumb": "Proteção Microsoft 365",
+    "nav.cta2": "Falar com Especialista",
     "nav.cta": "Baixar Apresentação",
 
     "hero.badge": "Parceiro Oficial Acronis · Backup M365",
@@ -175,6 +176,7 @@ const translations = {
 
   en: {
     "nav.breadcrumb": "Microsoft 365 Protection",
+    "nav.cta2": "Talk to a Specialist",
     "nav.cta": "Download Presentation",
 
     "hero.badge": "Official Acronis Partner · M365 Backup",
@@ -349,6 +351,7 @@ const translations = {
 
   es: {
     "nav.breadcrumb": "Protección Microsoft 365",
+    "nav.cta2": "Hablar con Especialista",
     "nav.cta": "Descargar Presentación",
 
     "hero.badge": "Socio Oficial de Acronis · Backup M365",
