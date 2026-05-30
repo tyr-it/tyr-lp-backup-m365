@@ -491,6 +491,40 @@
 </section>
 
 <!-- ══════════════════════════════════════
+     MINI FORM
+════════════════════════════════════════ -->
+<section class="mini-form-section">
+  <div class="container">
+    <div class="mini-form-wrap">
+      <div class="mini-form-left">
+        <h2 data-i18n="mf.h2">Receba a Apresentação <span class="text-red">Gratuitamente</span></h2>
+        <p data-i18n="mf.p">Entenda em detalhes como proteger todo o seu ambiente Microsoft 365 com backup automático, criptografado e recuperação em segundos.</p>
+        <div class="trust-bar" style="margin-top:16px">
+          <span>⭐ CSAT <strong>4,93</strong>/5</span>
+          <span>🔒 <span data-i18n="mf.trust1">Apenas e-mail corporativo</span></span>
+          <span>📥 <span data-i18n="mf.trust2">Download imediato</span></span>
+        </div>
+      </div>
+      <div>
+        <form id="mini-form" class="mini-form-fields" onsubmit="submitMiniForm(event)">
+          <div class="form-row">
+            <input type="text" id="mf-nome" placeholder="Nome *" data-i18n-ph="form.ph.nome" required>
+            <input type="text" id="mf-empresa" placeholder="Empresa *" data-i18n-ph="form.ph.empresa" required>
+          </div>
+          <input type="email" id="mf-email" placeholder="E-mail corporativo *" data-i18n-ph="form.ph.email" required>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" data-i18n="mf.btn">Baixar Apresentação Grátis</button>
+          <div id="mini-form-msg" class="form-msg"></div>
+          <p style="font-size:.72rem;color:var(--muted);margin-top:8px">
+            <span data-i18n="form.privacy1">Ao enviar, você concorda com nossa</span>
+            <a href="https://tyr.digital/politica-de-privacidade/" target="_blank" style="color:var(--primary)" data-i18n="form.privacy2">Política de Privacidade</a>.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
      COBERTURA COMPLETA
 ════════════════════════════════════════ -->
 <section id="cobertura" class="section" style="background:linear-gradient(to bottom,var(--card),var(--bg))">
@@ -532,40 +566,6 @@
           <div class="cover-sub" data-i18n="cov.tm.sub">Conversas, arquivos e dados de apps</div>
           <div class="cover-desc" data-i18n="cov.tm.desc">Histórico de conversas, arquivos compartilhados em canais e dados de aplicativos — nada fica de fora.</div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     MINI FORM
-════════════════════════════════════════ -->
-<section class="mini-form-section">
-  <div class="container">
-    <div class="mini-form-wrap">
-      <div class="mini-form-left">
-        <h2 data-i18n="mf.h2">Receba a Apresentação <span class="text-red">Gratuitamente</span></h2>
-        <p data-i18n="mf.p">Entenda em detalhes como proteger todo o seu ambiente Microsoft 365 com backup automático, criptografado e recuperação em segundos.</p>
-        <div class="trust-bar" style="margin-top:16px">
-          <span>⭐ CSAT <strong>4,93</strong>/5</span>
-          <span>🔒 <span data-i18n="mf.trust1">Apenas e-mail corporativo</span></span>
-          <span>📥 <span data-i18n="mf.trust2">Download imediato</span></span>
-        </div>
-      </div>
-      <div>
-        <form id="mini-form" class="mini-form-fields" onsubmit="submitMiniForm(event)">
-          <div class="form-row">
-            <input type="text" id="mf-nome" placeholder="Nome *" data-i18n-ph="form.ph.nome" required>
-            <input type="text" id="mf-empresa" placeholder="Empresa *" data-i18n-ph="form.ph.empresa" required>
-          </div>
-          <input type="email" id="mf-email" placeholder="E-mail corporativo *" data-i18n-ph="form.ph.email" required>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" data-i18n="mf.btn">Baixar Apresentação Grátis</button>
-          <div id="mini-form-msg" class="form-msg"></div>
-          <p style="font-size:.72rem;color:var(--muted);margin-top:8px">
-            <span data-i18n="form.privacy1">Ao enviar, você concorda com nossa</span>
-            <a href="https://tyr.digital/politica-de-privacidade/" target="_blank" style="color:var(--primary)" data-i18n="form.privacy2">Política de Privacidade</a>.
-          </p>
-        </form>
       </div>
     </div>
   </div>
