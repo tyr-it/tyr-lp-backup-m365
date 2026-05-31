@@ -166,7 +166,7 @@ const translations = {
     "foot.s2": "Backup & Recuperação",
     "foot.s3": "Infraestrutura e Fator Humano",
     "foot.ct.title": "Contato",
-    "foot.copy": "© 2025 TYR Treinamento em Informática. Todos os direitos reservados.",
+    "foot.copy": "© 2026 TYR — IT Innovation Technology. Todos os direitos reservados.",
     "foot.priv": "Política de Privacidade",
 
     "sticky.text": "Seus dados no M365 estão protegidos?",
@@ -341,7 +341,7 @@ const translations = {
     "foot.s2": "Backup & Recovery",
     "foot.s3": "Infrastructure & Human Factor",
     "foot.ct.title": "Contact",
-    "foot.copy": "© 2025 TYR Treinamento em Informática. All rights reserved.",
+    "foot.copy": "© 2026 TYR — IT Innovation Technology. All rights reserved.",
     "foot.priv": "Privacy Policy",
 
     "sticky.text": "Is your M365 data protected?",
@@ -516,7 +516,7 @@ const translations = {
     "foot.s2": "Backup y Recuperación",
     "foot.s3": "Infraestructura y Factor Humano",
     "foot.ct.title": "Contacto",
-    "foot.copy": "© 2025 TYR Treinamento em Informática. Todos los derechos reservados.",
+    "foot.copy": "© 2026 TYR — IT Innovation Technology. Todos los derechos reservados.",
     "foot.priv": "Política de Privacidad",
 
     "sticky.text": "¿Sus datos en M365 están protegidos?",
