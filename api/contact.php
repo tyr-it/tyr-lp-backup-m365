@@ -52,7 +52,7 @@ if (in_array($domain, $blocked)) {
 
 // Log CSV
 $log_dir = __DIR__ . '/../logs';
-if (!is_dir($log_dir)) mkdir($log_dir, 0755, true);
+if (!is_dir($log_dir)) @mkdir($log_dir, 0750, true);
 $fp = fopen($log_dir . '/contacts.csv', 'a');
 fputcsv($fp, [date('Y-m-d H:i:s'), $nome, $sobrenome, $email, $tel, $msg]);
 fclose($fp);
@@ -66,8 +66,9 @@ $body .= "Telefone: $tel\n";
 $body .= "Data:     " . date('d/m/Y H:i:s') . "\n\n";
 $body .= "Mensagem:\n$msg\n";
 
+$email_header = str_replace(["\r", "\n"], '', $email);
 $headers  = "From: Site TYR <contato.tyr@vivasol.com.br>\r\n";
-$headers .= "Reply-To: $email\r\n";
+$headers .= "Reply-To: $email_header\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 $headers .= "Content-Transfer-Encoding: 8bit\r\n";
