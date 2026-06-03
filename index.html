@@ -364,6 +364,14 @@
 </head>
 <body>
 
+<!-- WEBINAR BANNER — auto-remove após 15/07/2026 -->
+<div id="wb-banner" style="background:linear-gradient(135deg,#C1121F,#d42030);padding:9px 48px 9px 24px;text-align:center;font-family:'Inter',system-ui,sans-serif;font-size:.82rem;font-weight:500;color:#fff;position:relative;z-index:9999;line-height:1.4;">
+  <span style="opacity:.85;">🎯 Webinar Gratuito · </span><strong>15 Jul · 10h</strong><span style="opacity:.85;"> · A Proteção que a Microsoft Não Oferece · </span>
+  <a href="https://tyr.digital/webinars/microsoft365/" style="color:#fff;font-weight:700;text-decoration:underline;white-space:nowrap;">Garantir Minha Vaga →</a>
+  <button onclick="document.getElementById('wb-banner').style.display='none';try{sessionStorage.setItem('wb-closed','1')}catch(e){}" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.7);font-size:1.2rem;cursor:pointer;line-height:1;padding:4px 6px;" aria-label="Fechar">×</button>
+</div>
+<script>(function(){var end=new Date('2026-07-16T00:00:00-03:00');var b=document.getElementById('wb-banner');if(!b)return;if(Date.now()>end.getTime()){b.remove();return;}try{if(sessionStorage.getItem('wb-closed')==='1')b.style.display='none';}catch(e){}})();</script>
+
 <!-- ══════════════════════════════════════
      HEADER
 ════════════════════════════════════════ -->
